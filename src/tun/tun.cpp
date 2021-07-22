@@ -1,7 +1,6 @@
 // https://backreference.org/2010/03/26/tuntun-interface-tutorial/
 
 #include "include/tun.hpp"
-#include <linux/if.h>
 extern "C"
 {
 #include "include/alloc.h"
@@ -17,6 +16,7 @@ extern "C"
 
 int TunDevice::init()
 {
+#ifdef linux
     CND_DAEMON_DEBUG("Allocating tun device....");
 	if (tun_alloc(&m_tun) != 0) {
         CND_DAEMON_CRITICAL(fmt::format("Failed to allocate tun device: {}", strerror(errno)));
@@ -40,12 +40,19 @@ int TunDevice::init()
 
         return -1;
     }
+#elif __APPLE__
+
+#endif
 
     return 0;
 }
 
 void TunDevice::destroy() {
+#ifdef linux
     tun_dealloc(&m_tun);
+#elif __APPLE__
+
+#endif
 }
 
 bool

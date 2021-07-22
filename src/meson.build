@@ -25,10 +25,7 @@ project_source_files = [
   'sockets/udp_client_socket.cpp',
   'sockets/udp_server_socket.cpp',
   'sockets/udp_socket.cpp',
-  'tun/alloc.c', # WOHOOOO! C!
-  'tun/tun.cpp',
-  'tun/up.c', # More C!
-  'tun/ip.c' # Still great C!
+  'tun/tun.cpp'
 ]
 
 logging_inc = include_directories('logging/include')
@@ -64,6 +61,18 @@ inc_dirs = [
   registrar_inc,
   tun_inc
 ]
+
+if build_machine.system() == 'linux'
+  project_source_files += [
+    'tun/linux/alloc.c',
+    'tun/linux/up.c',
+    'tun/linux/ip.c',
+  ]
+elif build_machine.system() == 'darwin'
+  subdir('tun/darwin')
+
+  project_source_files += macos_swift_tun
+endif
 
 # We compile into a library first because we need to
 # link the test code with it first.
