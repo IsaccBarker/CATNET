@@ -1,3 +1,6 @@
+# Werid tmp files
+**/tmp*
+
 # Prerequisites
 *.d
 
