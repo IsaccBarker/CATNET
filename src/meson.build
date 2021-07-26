@@ -11,12 +11,14 @@ subdir('proto')
 
 project_source_files = [
   base_gened, test_connection_gened, pubkey_exchange_gened,
+  catnip_gened,
   'participant/participant.cpp',
   'participant/update_catstate.cpp',
   'participant/whisker_exchange.cpp',
   'registrar/registrar.cpp',
   'logging/log.cpp',
-  'message/message.cpp',
+  'message/base.cpp',
+  'message/catnip.cpp',
   'message/encrypt.cpp',
   'sockets/socket_compat.cpp',
   'sockets/tcp_client_socket.cpp',

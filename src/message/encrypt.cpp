@@ -1,6 +1,6 @@
 #include "include/encrypt.hpp"
 
-#include "include/message.hpp"
+#include "include/base.hpp"
 #include <cassert>
 #include <cerrno>
 #include <log.hpp>

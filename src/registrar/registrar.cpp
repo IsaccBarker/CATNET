@@ -1,15 +1,15 @@
 #include "registrar.hpp"
-#include <message.hpp>
+#include <base.hpp>
 #include <tcp_server_socket.hpp>
 #include <tcp_socket.hpp>
 #include <thread>
 
 #include "../message/include/encrypt.hpp"
-#include "../message/include/message.hpp"
+#include "../message/include/base.hpp"
 #include <base.pb.h>
 #include <encrypt.hpp>
 #include <log.hpp>
-#include <message.hpp>
+#include <base.hpp>
 #include <vector>
 
 #include "../logging/include/log.hpp"

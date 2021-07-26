@@ -10,7 +10,7 @@
 #include <vector>
 
 #include "../message/include/encrypt.hpp" // TODO: Use arrow notation, YouCompleteMe is screaming at me for now
-#include "../message/include/message.hpp" // TODO: Use arrow notation, YouCompleteMe is screaming at me for now
+#include "../message/include/base.hpp" // TODO: Use arrow notation, YouCompleteMe is screaming at me for now
 
 using namespace base;
 
